@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+}

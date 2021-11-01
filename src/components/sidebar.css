@@ -1,0 +1,47 @@
+.cities-list,
+.details-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: rgb(92, 92, 92);
+}
+input {
+  background-color: rgba(255, 255, 255, 0);
+  /* opacity: 0.5; */
+  color: #d1d1d1;
+  height: 40px;
+  width: 450px;
+  border: none;
+  border-bottom: 2px solid #333131;
+}
+.sidebar-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto 30px;
+}
+.details-list li,
+.cities-list li {
+  margin: 15px;
+  padding: 10px;
+}
+hr {
+  border-bottom: 1px solid #333131;
+  width: 100%;
+}
+.details-num {
+  float: right;
+}
+.btn {
+  display: absolute;
+  top: 0;
+  right: 0;
+  background-color: blueviolet;
+  border: none;
+}
+.fa {
+  font-size: 15px;
+  width: 30px;
+  height: 30px;
+}
