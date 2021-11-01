@@ -10,21 +10,23 @@ export default function Sidebar() {
     console.log(reg);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="sidebar-container">
       <div className="cities">
-        <form className="example">
+        <form className="example" onSubmit={handleSubmit}>
           <input type="text" placeholder="Another location" name="search" />
           <button type="submit" className="btn">
-            <i className="fa fa-search"></i>
+            <img className='search-icon' src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" />
           </button>
         </form>
         <ul className="cities-list">
           {regions.map((region) => {
             return (
               <li
-                onClick={(e) => {
-                  e.preventDefault();
+                onClick={() => {
                   selectedRegion(region);
                 }}
               >

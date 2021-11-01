@@ -32,16 +32,21 @@ hr {
 }
 .details-num {
   float: right;
+  color: aliceblue;
 }
 .btn {
-  display: absolute;
-  top: 0;
-  right: 0;
-  background-color: blueviolet;
+  background-color: rgba(182, 0, 0, 0.699);
   border: none;
+  border-radius: 15%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
 }
-.fa {
-  font-size: 15px;
-  width: 30px;
-  height: 30px;
+.search-icon {
+  width: 15px;
+  height: 15px;
+}
+
+input:focus {
+  outline: none;
 }
