@@ -32,14 +32,16 @@ hr {
 }
 .details-num {
   float: right;
-  color: aliceblue;
+  color: #f0f8ff;
 }
 .btn {
-  background-color: rgba(182, 0, 0, 0.699);
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgb(255, 255, 255);
   border: none;
-  border-radius: 15%;
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 57px;
   cursor: pointer;
 }
 .search-icon {
@@ -49,4 +51,13 @@ hr {
 
 input:focus {
   outline: none;
+}
+.form {
+  display: flex;
+}
+@media only screen and (max-width: 500px) {
+  .btn {
+    position: inherit;
+    height: 40px;
+  }
 }
