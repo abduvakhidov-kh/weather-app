@@ -1,0 +1,11 @@
+.sidebar-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto 30px;
+}
+hr {
+  border-bottom: 1px solid #333131;
+  width: 100%;
+}

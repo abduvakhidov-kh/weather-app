@@ -1,6 +1,6 @@
 import "./App.css";
-import Sidebar from "./components/Sidebar";
-import WeatherInfo from "./components/WeatherInfo";
+import Sidebar from "./components/Sidebar/Sidebar";
+import WeatherInfo from "./components/WeatherInfo/WeatherInfo";
 
 function App() {
   return (
