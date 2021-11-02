@@ -19,7 +19,7 @@ input {
   /* opacity: 0.5; */
   color: #d1d1d1;
   height: 40px;
-  width: 450px;
+  width: 70%;
   border: none;
   border-bottom: 2px solid #333131;
 }
@@ -31,7 +31,7 @@ input {
   background-color: rgb(255, 255, 255);
   border: none;
   width: 50px;
-  height: 57px;
+  height: 55px;
   cursor: pointer;
 }
 .search-icon {

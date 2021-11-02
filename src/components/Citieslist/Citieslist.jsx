@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Citieslist.css";
+import { weatherLoad } from "../../redux/actions";
+import { useDispatch } from "react-redux";
 
 const regions = ["Samarqand", "Buxoro", "Tashkent", "Fargona", "Nukus"];
 export default function Citieslist() {
   const [city, setCity] = useState("Tashkent");
+  const dispatch = useDispatch();
 
   const selectedRegion = (reg) => {
     setCity(reg);
@@ -12,13 +15,28 @@ export default function Citieslist() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("submit", e.target.value);
   };
 
+  const handleInput = (e) => {
+    setCity(e.target.value);
+  };
+  useEffect(() => {
+    dispatch(weatherLoad(city));
+  }, [city]);
+
+  console.log(city);
   return (
     <>
       <div className="cities">
         <form className="form" onSubmit={handleSubmit}>
-          <input type="text" placeholder="Another location" name="search" />
+          <input
+            type="text"
+            placeholder="Another location"
+            name="search"
+            value={city}
+            onChange={handleInput}
+          />
           <button type="submit" className="btn">
             <img
               className="search-icon"

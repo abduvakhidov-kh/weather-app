@@ -3,9 +3,16 @@
   height: 100vh;
   flex-direction: column;
   justify-content: space-around;
-  margin: auto 30px;
+  margin: 0 30px;
+  width: 450px;
+  padding: 15px;
 }
 hr {
   border-bottom: 1px solid #333131;
   width: 100%;
+}
+@media only screen and (max-width: 700px) {
+  .sidebar-container {
+    width: 380px;
+  }
 }
