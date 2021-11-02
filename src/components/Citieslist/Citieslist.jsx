@@ -1,31 +1,35 @@
 import React, { useEffect, useState } from "react";
 import "./Citieslist.css";
 import { weatherLoad } from "../../redux/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { DETAILS_LOADED, DETAILS_LOADING, SET_CITY } from "../../redux/types";
+import { useStore } from "react-redux";
 
-const regions = ["Samarqand", "Buxoro", "Tashkent", "Fargona", "Nukus"];
+const cities = ["Samarqand", "Bukhara", "Tashkent", "Fargona", "Nukus"];
 export default function Citieslist() {
-  const [city, setCity] = useState("Tashkent");
+  const [inputCity, setInputCity] = useState("");
+  const store = useStore();
+  const API_KEY = "88c34a8ddb27818051f224236d2df3ea";
   const dispatch = useDispatch();
+  const [selectedCity, setSelectedCity] = useState("Tashkent");
 
-  const selectedRegion = (reg) => {
-    setCity(reg);
-    console.log(reg);
+  const selectedRegion = (clickedCity) => {
+    setSelectedCity(clickedCity);
+    dispatch(weatherLoad(selectedCity));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submit", e.target.value);
+    // setSelectedCity(e.target.value);
+    console.log("Submit", e);
+    setSelectedCity(inputCity);
+    dispatch(weatherLoad(selectedCity));
   };
 
-  const handleInput = (e) => {
-    setCity(e.target.value);
-  };
-  useEffect(() => {
-    dispatch(weatherLoad(city));
-  }, [city]);
+  // const handleSubmit = () => {
+  // };
 
-  console.log(city);
+  // console.log(city);
   return (
     <>
       <div className="cities">
@@ -34,8 +38,7 @@ export default function Citieslist() {
             type="text"
             placeholder="Another location"
             name="search"
-            value={city}
-            onChange={handleInput}
+            onChange={(e) => setInputCity(e.target.value)}
           />
           <button type="submit" className="btn">
             <img
@@ -45,14 +48,15 @@ export default function Citieslist() {
           </button>
         </form>
         <ul className="cities-list">
-          {regions.map((region) => {
+          {cities.map((city) => {
             return (
               <li
-                onClick={() => {
-                  selectedRegion(region);
+                onClick={(city) => {
+                  console.log("cityis", city);
+                  selectedRegion(city.target.innerText);
                 }}
               >
-                {region}
+                {city}
               </li>
             );
           })}

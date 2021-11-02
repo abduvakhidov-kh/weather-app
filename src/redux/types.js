@@ -1,1 +1,3 @@
-export const FETCH_WEATHER = "FETCH_WEATHER";
+export const DETAILS_LOADED = "DETAILS_LOADED";
+export const DETAILS_LOADING = "DETAILS_LOADING";
+export const SET_CITY = "SET_CITY";

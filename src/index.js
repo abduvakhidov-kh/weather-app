@@ -7,6 +7,8 @@ import { rootReducer } from "./redux/rootreducer";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
+
+
 const store = createStore(
   rootReducer,
   compose(

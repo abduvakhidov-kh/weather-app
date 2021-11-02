@@ -1,16 +1,31 @@
-import { FETCH_WEATHER } from "./types";
+import { DETAILS_LOADING, DETAILS_LOADED, SET_CITY } from "./types";
 
-const initialState = {};
+const initialState = {
+  loading: true,
+  weatherInfo: {},
+  selectedCity: "Tashkent",
+};
 
 export const weatherReducer = (state = initialState, action) => {
   console.log("weather Reducer > ", action);
 
   switch (action.type) {
-    case FETCH_WEATHER:
-      const weatherInfo = action.details;
+    case DETAILS_LOADED:
       return {
         ...state,
-        weatherInfo,
+        loading: false,
+        weatherDetails: action.weatherDetails,
+      };
+    case DETAILS_LOADING:
+      return {
+        ...state,
+        loading: true,
+      };
+    case SET_CITY:
+      const selectedCity = action.selectedCity;
+      return {
+        ...state,
+        selectedCity,
       };
 
     default:

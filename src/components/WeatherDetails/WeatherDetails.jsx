@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./WeatherDetails.css";
+import { useSelector } from "react-redux";
+
+const selectWeatherDetails = (state) => state.weatherReducer.weatherDetails;
 
 export default function WeatherDetails() {
+  const [cloudy, setCloudy] = useState(0);
+  const [humidity, setHumidity] = useState(0);
+  const [wind, setWind] = useState(0);
+  const [pressure, setPressure] = useState(0);
+
+  const selectedCity = useSelector(
+    (state) => state.weatherReducer.selectedCity
+  );
+  const weatherDetails = useSelector(selectWeatherDetails);
+
+  useEffect(() => {
+    setCloudy(weatherDetails?.clouds.all);
+    setHumidity(weatherDetails?.main.humidity);
+    setWind(weatherDetails?.wind.speed);
+    setPressure(weatherDetails?.main.pressure);
+  }, [weatherDetails]);
+
   return (
     <>
       <div className="weather-details">
@@ -9,17 +29,17 @@ export default function WeatherDetails() {
         <ul className="details-list">
           <li className="details-list-item">
             <div>Cloudy </div>
-            <div className="details-num">12%</div>
+            <div className="details-num">{cloudy}%</div>
           </li>
           <li className="details-list-item">
-            <div>Humidity </div> <div className="details-num">78%</div>
+            <div>Humidity </div> <div className="details-num">{humidity}%</div>
           </li>
           <li className="details-list-item">
             <div>Wind </div>
-            <div className="details-num">1km/h</div>
+            <div className="details-num">{wind}km/h</div>
           </li>
           <li className="details-list-item">
-            <div>Rain </div> <div className="details-num">0mm</div>
+            <div>Pressure </div> <div className="details-num">{pressure}mm</div>
           </li>
         </ul>
       </div>
