@@ -19,7 +19,6 @@ export default function Citieslist() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submit", e);
     setSelectedCity(inputCity);
   };
 

@@ -11,13 +11,13 @@ function App() {
   var d = new Date();
   const hour = d.getHours();
 
-  if (hour > 5 && hour < 9) {
+  if (hour > 5 && hour <= 9) {
     var imageClass = "morning";
-  } else if (hour > 9 && hour < 16) {
-    var imageClass = "houray";
-  } else if (hour > 16 && hour < 20) {
+  } else if (hour > 9 && hour <= 16) {
+    var imageClass = "day";
+  } else if (hour > 16 && hour <= 20) {
     var imageClass = "evening";
-  } else if (hour > 20 && hour < 5) {
+  } else if (hour > 20 && hour <= 5) {
     var imageClass = "night";
   }
 

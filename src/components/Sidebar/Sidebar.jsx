@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Citieslist from "../Citieslist/Citieslist";
 import WeatherDetails from "../WeatherDetails/WeatherDetails";
 import "./sidebar.css";

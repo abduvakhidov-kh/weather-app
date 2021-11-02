@@ -1,5 +1,5 @@
 import "./weatherInfo.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 
 const selectWeatherDetails = (state) => state.weatherReducer.weatherDetails;
@@ -14,15 +14,6 @@ export default function WeatherInfo() {
 
   const weatherDetails = useSelector(selectWeatherDetails);
 
-  // useEffect(() => {
-  //   fetch(
-  //     `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=${API_KEY}&units=metric`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) =>
-  //       store.dispatch({ type: DETAILS_LOADED, weatherDetails: data })
-  //     );
-  // }, [selectedCity]);
   console.log("WeatherDetails", weatherDetails);
 
   useEffect(() => {
