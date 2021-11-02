@@ -1,30 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "./Citieslist.css";
 import { weatherLoad } from "../../redux/actions";
-import { useDispatch, useSelector } from "react-redux";
-import { DETAILS_LOADED, DETAILS_LOADING, SET_CITY } from "../../redux/types";
-import { useStore } from "react-redux";
+import { useDispatch} from "react-redux";
 
 const cities = ["Samarqand", "Bukhara", "Tashkent", "Fargona", "Nukus"];
 export default function Citieslist() {
   const [inputCity, setInputCity] = useState("");
-  const store = useStore();
-  const API_KEY = "88c34a8ddb27818051f224236d2df3ea";
   const dispatch = useDispatch();
   const [selectedCity, setSelectedCity] = useState("Tashkent");
 
   const selectedRegion = (clickedCity) => {
     setSelectedCity(clickedCity);
-    dispatch(weatherLoad(selectedCity));
   };
+
+  useEffect(() => {
+    dispatch(weatherLoad(selectedCity));
+  }, [selectedCity]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Submit", e);
     setSelectedCity(inputCity);
-    dispatch(weatherLoad(selectedCity));
   };
-
 
   return (
     <>
