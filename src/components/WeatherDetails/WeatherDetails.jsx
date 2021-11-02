@@ -10,9 +10,6 @@ export default function WeatherDetails() {
   const [wind, setWind] = useState(0);
   const [pressure, setPressure] = useState(0);
 
-  const selectedCity = useSelector(
-    (state) => state.weatherReducer.selectedCity
-  );
   const weatherDetails = useSelector(selectWeatherDetails);
 
   useEffect(() => {

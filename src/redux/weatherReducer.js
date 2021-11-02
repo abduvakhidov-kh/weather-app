@@ -7,7 +7,6 @@ const initialState = {
 };
 
 export const weatherReducer = (state = initialState, action) => {
-  console.log("weather Reducer > ", action);
 
   switch (action.type) {
     case DETAILS_LOADED:

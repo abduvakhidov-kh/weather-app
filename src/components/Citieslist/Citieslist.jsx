@@ -20,16 +20,12 @@ export default function Citieslist() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setSelectedCity(e.target.value);
     console.log("Submit", e);
     setSelectedCity(inputCity);
     dispatch(weatherLoad(selectedCity));
   };
 
-  // const handleSubmit = () => {
-  // };
 
-  // console.log(city);
   return (
     <>
       <div className="cities">
