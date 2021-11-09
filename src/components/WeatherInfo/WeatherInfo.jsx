@@ -6,6 +6,7 @@ const selectWeatherDetails = (state) => state.weatherReducer.weatherDetails;
 
 export default function WeatherInfo() {
   var today = new Date();
+  console.log(today);
 
   const [iconUrl, setIconUrl] = useState("");
   const [description, setDescription] = useState("");
